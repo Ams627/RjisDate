@@ -13,8 +13,10 @@ namespace RjisDate
         {
             try
             {
+
+                Console.WriteLine($"args: {nameof(args)}");
                 var res = new RjisDate(2016, 8, 31);
-                var d1 = RjisDate.Parse("32122019", 0);
+                var d1 = RjisDate.Parse("29022019", 0);
                 var (y, m, d) = d1.GetYmd();
                 Console.WriteLine($"date is {y:D4}-{m:D2}-{d:D2}");
             }

@@ -66,7 +66,7 @@ namespace RjisDate
             int y = 1000 * (line[offset + 4] - '0') + 100 * (line[offset + 5] - '0') + 10 * (line[offset + 6] - '0') + (line[offset + 7] - '0');
             if (m == 0 || m > 12)
             {
-                throw new ArgumentOutOfRangeException($"Month {m} is out of range - must be 1-12.");
+                throw new ArgumentOutOfRangeException(message: $"Month {m} is out of range - must be 1-12.", paramName: nameof(d));
             }
             if (y < 1970 || y > 2999)
             {
@@ -84,7 +84,7 @@ namespace RjisDate
 
             if (d == 0 || d > maxDays)
             {
-                throw new ArgumentOutOfRangeException($"Day {d} is out of range - must be 1-{maxDays}.");
+                throw new ArgumentOutOfRangeException($"Day {d} is out of range - must be -{maxDays}.");
             }
 
             return new RjisDate(y, m, d);
